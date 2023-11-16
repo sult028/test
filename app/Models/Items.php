@@ -7,7 +7,7 @@ class Items extends Model
 {
 protected $fillable = [
     'name',
-'price',
+    'price',
     'year',
     'colour',
     'speed'
