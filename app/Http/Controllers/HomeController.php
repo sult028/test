@@ -10,12 +10,13 @@ class HomeController extends Controller
     public function index(Request $request)
 
     {
+
         $cars = Items::create([
             'name' => $request->input('name'),
-            'price' => $request->input('300000'),
-            'year' => $request->input('1998'),
-            'colour' => $request->input('black'),
-            'speed' => $request->input('220'),
+            'price' => $request->input('price'),
+            'year' => $request->input('year'),
+            'colour' => $request->input('colour'),
+            'speed' => $request->input('speed'),
         ]);
 
     }
