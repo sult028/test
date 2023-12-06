@@ -22,3 +22,11 @@ Route::get('/news/create', [\App\Http\Controllers\NewsControllers::class, 'creat
 Route::get('/currency',[\App\Http\Controllers\CurrencyController::class, 'index']);
 Route::get('/currency/create',[\App\Http\Controllers\CurrencyController::class, 'create']);
 Route::post('/currency/store',[\App\Http\Controllers\CurrencyController::class, 'store']);
+Route::prefix('cars')->group(function (){
+    Route::get('/',[\App\Http\Controllers\CarsController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\CarsController::class,'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\CarsController::class, 'store'])->name('store-car');
+    Route::get('show/{id}', [\App\Http\Controllers\CarsController::class, 'show'])->name('show');
+    Route::get('update/{id}', [\App\Http\Controllers\CarsController::class, 'update'])->name('update');
+    Route::post('update/{id}', [\App\Http\Controllers\CarsController::class, 'updateStore'])->name('update-car');
+});
